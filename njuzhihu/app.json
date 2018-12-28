@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/mine/mine",
+    "pages/index/index",
+    "pages/account/account", 
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "backgroundColor": "#eee",
+    "navigationBarBackgroundColor": "#7F0080",
+    "navigationBarTitleText": "个人中心",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "#7F0080",
+    "backgroundColor": "#FBFBFB",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "单人问答",
+        "iconPath": "images/data.png",
+        "selectedIconPath": "images/data_focus.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/account_focus.png",
+        "selectedIconPath": "images/account.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}
