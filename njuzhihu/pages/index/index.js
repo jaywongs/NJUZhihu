@@ -1,66 +1,111 @@
-// pages/index/index.js
+var util = require('../../utils/util.js')
+var hostConfig = "172.19.240.226:8080"
+var app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    feed: [],
+    navTab: ["筛选排序：", "获赞数"], // 提供排序模式
+    currentNavtab: 0, //默认选择的模式index
+    isanswer: 0, //是否已经回答
+    feed_length: 0
   },
-
   /**
-   * 生命周期函数--监听页面加载
+   * 初次加载页面数据
    */
-  onLoad: function (options) {
-
+  onLoad: function () {
+    console.log('onLoad')
+    var that = this
+    //调用应用实例的方法获取全局数据
+    this.refresh();
   },
-
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 自主选择标签栏
    */
-  onReady: function () {
-
+  switchTab: function (e) {
+    var that = this;
+    var idx = e.currentTarget.dataset.idx;
+    console.log(idx);
+    if (idx == 1) {
+      wx.request({
+        url: 'http://' + hostConfig + '/queswerServer/listQuestionsByLike',
+        data: {},
+        header: {
+          "Content-Type": "applciation/json"
+        },
+        method: "GET",
+        success: function (e) {
+          that.setData({
+            feed: e.data,
+            feed_length: e.data.length
+          });
+          console.log(e);
+        },
+      })
+    } else if (idx == 0) {
+      that.refresh();
+    }
+    that.setData({
+      currentNavtab: e.currentTarget.dataset.idx
+    })
   },
-
   /**
-   * 生命周期函数--监听页面显示
+   * 搜索栏，可进行模糊化查询
    */
-  onShow: function () {
-
+  search: function () {
+    var that = this;
+    console.log("..." + this.data.topic)
+    wx.request({
+      url: 'http://' + hostConfig + '/queswerServer/searchQuestions',
+      data: {
+        topic: this.data.topic
+      },
+      header: {
+        "Content-Type": "applciation/json"
+      },
+      method: "GET",
+      success: function (e) {
+        that.setData({
+          feed: e.data,
+          feed_length: e.data.length
+        });
+        console.log(e);
+      },
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  searchInput: function (e) {
+    this.setData({
+      topic: e.detail.value
+    })
   },
-
   /**
-   * 生命周期函数--监听页面卸载
+   * 用户完成选择后，小程序进行刷新显示
    */
-  onUnload: function () {
-
+  refresh: function () {
+    var that = this;
+    wx.request({
+      url: 'http://' + hostConfig + '/queswerServer/listQuestions',
+      data: {},
+      header: {
+        "Content-Type": "applciation/json"
+      },
+      method: "GET",
+      success: function (e) {
+        console.log(e)
+        that.setData({
+          feed: e.data,
+          feed_length: e.data.length
+        });
+        console.log(e);
+      },
+    })
   },
-
   /**
-   * 页面相关事件处理函数--监听用户下拉动作
+   * 跳转页面并传递相关参数
    */
-  onPullDownRefresh: function () {
-
+  bindStory: function (e) {
+    var $data = e.currentTarget.dataset
+    wx.navigateTo({
+      url: '../inform/inform?ansname=' + $data.ansname + '&ansimg=' + $data.ansimg + '&anscontent=' + $data.anscontent + '&anstime=' + $data.anstime + '&quesname=' + $data.quesname + '&quesimg=' + $data.quesimg + '&quescontent=' + $data.quescontent + '&ques_is_free=' + $data.ques_is_free + '&is_answer=' + $data.isanswer + '&ans_liked=' + $data.ans_liked
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
