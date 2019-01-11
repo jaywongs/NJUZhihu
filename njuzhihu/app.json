@@ -2,9 +2,11 @@
   "pages": [
     "pages/mine/mine",
     "pages/index/index",
-    "pages/account/account", 
+    "pages/account/account",
     "pages/logs/logs",
-    "pages/inform/inform"
+    "pages/inform/inform",
+    "pages/story/story",
+    "pages/detailed/detailed"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -25,6 +27,12 @@
         "text": "单人问答",
         "iconPath": "images/data.png",
         "selectedIconPath": "images/data_focus.png"
+      },
+      {
+        "pagePath": "pages/story/story",
+        "text": "社区问答",
+        "iconPath": "images/component.png",
+        "selectedIconPath": "images/component_focus.png"
       },
       {
         "pagePath": "pages/mine/mine",
