@@ -75,11 +75,15 @@ public class BaseDaoHibernate<T> implements BaseDao<T>
 	@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)
 	public List<T> findAll() {
 		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction();
-		Criteria criteria = session.createCriteria(pClass);
-		List<T> list = criteria.list();
-		tx.commit();
-		session.close();
+		List<T> list;
+		try {
+			Transaction tx = session.beginTransaction();
+			Criteria criteria = session.createCriteria(pClass);
+			list = criteria.list();
+			tx.commit();
+		} finally {
+			session.close();
+		}
 		return list;
 	}
 
