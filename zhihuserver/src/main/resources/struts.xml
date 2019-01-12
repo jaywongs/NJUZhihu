@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Struts2配置文件的DTD信息 -->
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<!-- Struts2配置文件的根元素 -->
+<struts>
+	<!-- 配置了系列常量 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.devMode" value="true" />
+	<package name="action" namespace="/" extends="struts-default">
+
+		<!-- 与用户User相关的Action设置 -->
+		<action name="addUser" class="server.action.UserAction" method="add">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="updateIntro" class="server.action.UserAction" method="updateIntro">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="findPerson" class="server.action.UserAction" method="findPerson">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="updateAccount" class="server.action.UserAction" method="updateAccount">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="listFamous" class="server.action.UserAction" method="listFamous">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="listliked" class="server.action.UserAction" method="listliked">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="searchPerson" class="server.action.UserAction" method="searchPerson">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+
+
+		<!-- 与关注Follow相关的Action设置 -->
+		<action name="addFollow" class="server.action.FollowAction" method="addFollow">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="isFollow" class="server.action.FollowAction" method="isFollow">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="deleteFollow" class="server.action.FollowAction" method="deleteFollow">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+
+	</package>
+</struts>
