@@ -7,7 +7,8 @@
     "pages/inform/inform",
     "pages/story/story",
     "pages/detailed/detailed",
-    "pages/share/share"
+    "pages/share/share",
+    "pages/listshares/listshares"
   ],
   "window": {
     "backgroundTextStyle": "light",
