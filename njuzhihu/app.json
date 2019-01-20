@@ -6,7 +6,8 @@
     "pages/logs/logs",
     "pages/inform/inform",
     "pages/story/story",
-    "pages/detailed/detailed"
+    "pages/detailed/detailed",
+    "pages/share/share"
   ],
   "window": {
     "backgroundTextStyle": "light",
