@@ -8,50 +8,15 @@ import server.dao.QuestionDao;
 import server.dao.UserDao;
 import server.model.User;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service
 public class UserService {
 
+	@Resource
 	private UserDao userDao;
-	
-	private AnswerDao answerDao;
-	
-	private QuestionDao questionDao;
-	
-	private MessageDao messageDao;
 
-	public AnswerDao getAnswerDao() {
-		return answerDao;
-	}
-
-	public void setAnswerDao(AnswerDao answerDao) {
-		this.answerDao = answerDao;
-	}
-
-	public QuestionDao getQuestionDao() {
-		return questionDao;
-	}
-
-	public void setQuestionDao(QuestionDao questionDao) {
-		this.questionDao = questionDao;
-	}
-
-	public MessageDao getMessageDao() {
-		return messageDao;
-	}
-
-	public void setMessageDao(MessageDao messageDao) {
-		this.messageDao = messageDao;
-	}
-
-	public UserDao getUserDao() {
-		return userDao;
-	}
-
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
-	}
 	
 	public void addUser(User user){
 		userDao.save(user);
