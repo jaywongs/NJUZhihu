@@ -69,8 +69,8 @@
 
 .container .item-look {
   display: inline-block;
-  width: 120rpx;
-  height: 95rpx;
+  width: 30rpx;
+  height: 30rpx;
   float: right;
 }
 
