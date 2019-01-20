@@ -56,5 +56,88 @@
 			<result name="error">/index.jsp</result>
 		</action>
 
+		<!-- 与提问Question相关的Action设置 -->
+		<action name="addQuest" class="server.action.QuestionAction" method="addQuest">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="listQuestions" class="server.action.QuestionAction"
+				method="listQuestions">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="MyQuestions" class="server.action.QuestionAction"
+				method="MyQuestions">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="searchQuestions" class="server.action.QuestionAction"
+				method="searchQuestions">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="searchMyQuestions" class="server.action.QuestionAction"
+				method="searchMyQuestions">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="findQuesToMe" class="server.action.QuestionAction"
+				method="findQuesToMe">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="listQuestionsByTime" class="server.action.QuestionAction"
+				method="listQuestionsByTime">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="listQuestionsByLike" class="server.action.QuestionAction"
+				method="listQuestionsByLike">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+
+		<!-- 与回答Answer相关的Action设置 -->
+		<action name="addLiked" class="server.action.AnswerAction" method="addLiked">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="deleteLiked" class="server.action.AnswerAction" method="deleteLiked">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="addAnswer" class="server.action.AnswerAction" method="addAnswer">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="lookAnswer" class="server.action.AnswerAction" method="lookAnswer">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="MyAnswers" class="server.action.AnswerAction" method="MyAnswers">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<!-- 与通知Message相关的Action设置 -->
+		<action name="findNotifies" class="server.action.MessageAction"
+				method="findNotifies">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+
 	</package>
 </struts>
