@@ -1,34 +1,21 @@
 package server.service;
 
 
+import org.springframework.stereotype.Service;
 import server.dao.FollowDao;
 import server.dao.UserDao;
 import server.model.Follow;
 
+import javax.annotation.Resource;
+
+@Service
 public class FollowService {
-	
+
+	@Resource
 	public FollowDao followDao;
-	
+
+	@Resource
 	public UserDao userDao;
-	
-	public FollowDao getFollowDao() {
-		return followDao;
-	}
-
-	public void setFollowDao(FollowDao followDao) {
-		this.followDao = followDao;
-	}
-
-
-	public UserDao getUserDao() {
-		return userDao;
-	}
-
-
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
-	}
-
 
 	public void addFollow(Follow follow){
 		followDao.save(follow);

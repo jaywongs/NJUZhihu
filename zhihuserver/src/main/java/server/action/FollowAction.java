@@ -4,10 +4,13 @@ import com.alibaba.fastjson.JSONObject;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
 import server.model.Follow;
+import server.model.Message;
 import server.model.User;
 import server.service.FollowService;
+import server.service.MessageService;
 import server.service.UserService;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -16,15 +19,15 @@ import java.io.PrintWriter;
 public class FollowAction extends ActionSupport {
 	private static final long serialVersionUID = 1L;
 
-	HttpServletRequest request = ServletActionContext.getRequest();
-	HttpServletResponse response = ServletActionContext.getResponse();
+	private HttpServletRequest request = ServletActionContext.getRequest();
+	private HttpServletResponse response = ServletActionContext.getResponse();
 	HttpSession session = request.getSession();
 	JSONObject json = null;
 
-	public Follow follow;
+	private Follow follow;
 
-	public String hisname;
-	public String myname;
+	private String hisname;
+	private String myname;
 
 	public String getHisname() {
 		return hisname;
@@ -42,9 +45,14 @@ public class FollowAction extends ActionSupport {
 		this.myname = myname;
 	}
 
-	public FollowService followService;
+	@Resource
+	private FollowService followService;
 
-	public UserService userService;
+	@Resource
+	private UserService userService;
+
+	@Resource
+    private MessageService messageService;
 
 	public Follow getFollow() {
 		return follow;
@@ -52,22 +60,6 @@ public class FollowAction extends ActionSupport {
 
 	public void setFollow(Follow follow) {
 		this.follow = follow;
-	}
-
-	public FollowService getFollowService() {
-		return followService;
-	}
-
-	public void setFollowService(FollowService followService) {
-		this.followService = followService;
-	}
-
-	public UserService getUserService() {
-		return userService;
-	}
-
-	public void setUserService(UserService userService) {
-		this.userService = userService;
 	}
 
 	/**
@@ -96,8 +88,12 @@ public class FollowAction extends ActionSupport {
 			userService.updateUser(user_followed);
 			followService.addFollow(follow);
 
-			//TODO MessageService 关注后需要发送通知给被关注者
-
+            Message message = new Message();
+            message.setType(3);
+            message.setFrom_userid(user_mine.getId());
+            message.setIsread(1);
+            message.setUser(user_followed);
+            messageService.addMessage(message);
 			return SUCCESS;
 		}
 	}
