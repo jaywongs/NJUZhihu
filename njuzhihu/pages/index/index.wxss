@@ -20,7 +20,7 @@
 
 .container .search {
   width: 735rpx;
-  height: 45rpx;
+  height: 65rpx;
   padding: 12.5rpx 0 12.5rpx 15rpx;
   margin-top: 45rpx;
   background: #7F0080;
@@ -28,7 +28,7 @@
 
 .container .search-left {
   flex: 8;
-  background: #7F0080;
+  background: rgb(165, 103, 165);
   text-align: left;
 }
 
@@ -39,15 +39,16 @@
 }
 
 .search-placeholder {
-  color: #fff;
-  line-height: 20rpx;
+  color: rgb(228, 228, 228);
+  line-height: 5rpx;
+  margin-bottom: 20rpx 
 }
 
 .container .search .search-left image {
   display: inline-block;
   width: 35rpx;
   height: 35rpx;
-  padding: 15rpx 15rpx 15rpx 20rpx;
+  padding: 10rpx 15rpx 15rpx 20rpx;
 }
 
 .container .search .search-right {
