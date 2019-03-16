@@ -3,12 +3,20 @@
     "pages/mine/mine",
     "pages/index/index",
     "pages/account/account",
-    "pages/logs/logs",
-    "pages/inform/inform",
-    "pages/story/story",
     "pages/detailed/detailed",
+    "pages/inform/inform",
     "pages/share/share",
-    "pages/listshares/listshares"
+    "pages/search/search",
+    "pages/notify/notify",
+    "pages/story/story",
+    "pages/logs/logs",
+    "pages/quest/quest",
+    "pages/listques/listques",
+    "pages/listshares/listshares",
+    "pages/answer/answer",
+    "pages/listans/listans",
+    "pages/cash/cash",
+    "pages/hisAnswer/hisAnswer"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,6 +43,18 @@
         "text": "社区问答",
         "iconPath": "images/component.png",
         "selectedIconPath": "images/component_focus.png"
+      },
+      {
+        "pagePath": "pages/notify/notify",
+        "text": "通知",
+        "iconPath": "images/comments.png",
+        "selectedIconPath": "images/comments_focus.png"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "text": "寻人",
+        "iconPath": "images/bussiness-card.png",
+        "selectedIconPath": "images/bussiness-card_focus.png"
       },
       {
         "pagePath": "pages/mine/mine",
