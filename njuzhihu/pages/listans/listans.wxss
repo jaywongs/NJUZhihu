@@ -2,33 +2,16 @@
   height: 1500rpx;
 }
 
-.top-tab {
-  width: 750rpx;
-  height: 50rpx;
-  background: #7F0080;
-  color: #cfcfcf;
-  font-size: 24rpx;
-  align-items: center;
-  box-shadow: 0 0rpx 0rpx #fff;
-  z-index: 9999;
-}
-
-.toptab.active {
-  color: #fff;
-  border-bottom: dotted 0 #fff;
-}
-
 .container .search {
   width: 735rpx;
   height: 65rpx;
   padding: 12.5rpx 0 12.5rpx 15rpx;
-  margin-top: 45rpx;
   background: #7F0080;
 }
 
 .container .search-left {
   flex: 8;
-  background: rgb(165, 103, 165);
+  background: #7F0080;
   text-align: left;
 }
 
@@ -39,7 +22,7 @@
 }
 
 .search-placeholder {
-  color: rgb(228, 228, 228);
+  color: #fff;
   line-height: 20rpx;
 }
 
@@ -47,7 +30,7 @@
   display: inline-block;
   width: 35rpx;
   height: 35rpx;
-  padding: 10rpx 15rpx 15rpx 20rpx;
+  padding: 15rpx 15rpx 15rpx 20rpx;
 }
 
 .container .search .search-right {
