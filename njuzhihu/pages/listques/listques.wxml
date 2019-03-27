@@ -36,7 +36,7 @@
               <text class="answer-txt" aid="{{answer_id}}">{{item.ans_content}}</text>
             </view>
             <view class="answer-actions">
-              <view class="like dot">
+              <view class="like dot"> 
                 <a>{{item.ans_liked}} 赞同 </a>
               </view>
               <view class="comments dot">
@@ -47,7 +47,7 @@
                   <view class="ques-cost">类型：私密</view>
                 </view>
                 <view wx:elif="{{item.ques_is_free==1}}">
-                  <view class="ques-cost">类型：公开</view>
+                  <view class="ques-cost">类型：公开</view> 
                 </view>
               </view>
             </view>

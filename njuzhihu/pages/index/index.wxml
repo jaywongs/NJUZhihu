@@ -3,7 +3,6 @@
     {{itemName}}
   </view>
 </view>
-
 <scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
 
   <view class="search flex-wrp">
@@ -61,6 +60,6 @@
     </block>
   </view>
   <view wx:elif="{{feed_length==0}}">
-    <text class="noinfo"> 抱歉，无相关信息！ </text>
+    <text class="noinfo"> 抱歉，没有相关信息！ </text>
   </view>
 </scroll-view>
