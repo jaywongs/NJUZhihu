@@ -138,6 +138,48 @@
 			<result name="input">/index.jsp</result>
 			<result name="error">/index.jsp</result>
 		</action>
-
+		<!-- 与分享Story相关的Action设置 -->
+		<action name="findStory" class="server.action.StoryAction" method="findStory">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="addStory" class="server.action.StoryAction" method="addStory">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="listStories" class="server.action.StoryAction" method="listStories">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="searchStories" class="server.action.StoryAction" method="searchStories">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="MyStories" class="server.action.StoryAction" method="MyStories">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="listStoriesByFree" class="server.action.StoryAction"
+				method="listStoriesByFree">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="listStoriesByLook" class="server.action.StoryAction"
+				method="listStoriesByLook">
+			<result>/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<!-- 与评论Comment相关的Action设置 -->
+		<action name="addComment" class="server.action.CommentAction" method="addComment">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="listComments" class="server.action.CommentAction"
+				method="listComments">
+			<result>/index.jsp</result>
+			<result name="input">/index.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
 	</package>
 </struts>
