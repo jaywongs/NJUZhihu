@@ -28,7 +28,7 @@
 
 .container .search-left {
   flex: 8;
-  background: #7F0080;
+  background: rgb(165, 103, 165);
   text-align: left;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .search-placeholder {
-  color: #fff;
+  color: rgb(228, 228, 228);
   line-height: 20rpx;
 }
 
@@ -69,8 +69,8 @@
 
 .container .item-look {
   display: inline-block;
-  width: 120rpx;
-  height: 95rpx;
+  width: 30rpx;
+  height: 30rpx;
   float: right;
 }
 
