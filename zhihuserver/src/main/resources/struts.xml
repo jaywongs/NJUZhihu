@@ -181,5 +181,22 @@
 			<result name="input">/index.jsp</result>
 			<result name="error">/index.jsp</result>
 		</action>
+
+		<action name="MListQuestions" class="server.action.ManagerAction"
+				method="listQuestions">
+			<result>/manager.jsp</result>
+			<result name="input">/manager.jsp</result>
+			<result name="error">/manager.jsp</result>
+		</action>
+
+		<action name="closeQuestions" class="server.action.ManagerAction"
+				method="closeQuestions">
+			<result>/manager.jsp</result>
+		</action>
+
+		<action name="closeStory" class="server.action.ManagerAction"
+				method="closeStory">
+			<result>/manager.jsp</result>
+		</action>
 	</package>
 </struts>
